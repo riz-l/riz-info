@@ -1,11 +1,15 @@
 // Import: Packages
 import React from "react";
 
+// Import: Assets
+import { BiMenuAltRight as MenuIcon } from "react-icons/bi";
+
 // Import: Elements
 import {
   Container,
   Logo,
   LogoContainer,
+  MenuIconContainer,
   Nav,
   NavContainer,
   NavItem,
@@ -30,6 +34,10 @@ export default function Header() {
               <NavItem to="/g">About</NavItem>
               <NavItem to="/g">Contact</NavItem>
             </Nav>
+
+            <MenuIconContainer>
+              <MenuIcon />
+            </MenuIconContainer>
           </NavContainer>
         </Wrapper>
       </Container>

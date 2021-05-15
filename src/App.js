@@ -37,7 +37,7 @@ export default function App() {
     <ThemeProvider theme={isGlobalDarkTheme ? darkTheme : lightTheme}>
       <Container>
         <Header />
-        <Heading>Riz Layton</Heading>
+        <Heading>Hello there. I'm Riz.</Heading>
 
         <button type="button" onClick={() => setTheme()}>
           Change theme
