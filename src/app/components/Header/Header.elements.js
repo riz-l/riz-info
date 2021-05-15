@@ -96,7 +96,7 @@ export const NavItem = styled(NavLink).attrs({ activeClassName })`
   transition: all 100ms linear;
 
   &:last-of-type {
-    border: 1px solid ${(props) => props.theme.colors.global.textSecondary};
+    border: 2px solid ${(props) => props.theme.colors.global.textSecondary};
     border-radius: 8px;
     margin: 0 0 0 8px;
     transition: all 100ms linear;
@@ -107,7 +107,7 @@ export const NavItem = styled(NavLink).attrs({ activeClassName })`
     transition: all 100ms linear;
 
     &:last-of-type {
-      border: 1px solid ${(props) => props.theme.colors.global.highlightPrimary};
+      border: 2px solid ${(props) => props.theme.colors.global.highlightPrimary};
       transition: all 100ms linear;
     }
   }

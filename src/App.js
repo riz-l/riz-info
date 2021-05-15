@@ -27,8 +27,6 @@ export default function App() {
       <Container>
         <Header />
         <Navigation />
-
-        <Heading>Hello there. I'm Riz.</Heading>
       </Container>
     </ThemeProvider>
   );
@@ -42,13 +40,4 @@ const Container = styled.div`
   transition: all 100ms linear;
   width: 100%;
   min-width: 100vw;
-`;
-
-// Element: Heading
-const Heading = styled.h1`
-  color: ${(props) => props.theme.colors.global.textPrimary};
-  font-family: "PoppinsThin";
-  font-size: 8rem;
-  position: relative;
-  transition: all 100ms linear;
 `;

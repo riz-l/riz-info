@@ -13,7 +13,7 @@ export const Button = styled.span``;
 // Styled: Label
 export const Label = styled.label`
   align-items: center;
-  background: #ff5851;
+  background: #f57a7e;
   border-radius: 100px;
   cursor: pointer;
   display: flex;
