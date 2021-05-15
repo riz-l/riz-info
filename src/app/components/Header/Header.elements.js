@@ -26,11 +26,6 @@ export const Wrapper = styled.div`
   margin: 0 auto;
   transition: all 100ms linear;
   width: 92%;
-
-  @media ${deviceWidth.mobileL} {
-    transition: all 100ms linear;
-    width: 92%;
-  }
 `;
 
 // Element: LogoContainer

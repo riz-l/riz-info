@@ -2,11 +2,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 // Import: Reducers
-import globalThemeSlice from "./slices/globalThemeSlice";
+import globalThemeReducer from "./slices/globalThemeSlice";
+import navigationReducer from "./slices/navigationSlice";
 
 // Redux Store:
 export default configureStore({
   reducer: {
-    globalTheme: globalThemeSlice,
+    globalTheme: globalThemeReducer,
+    navigation: navigationReducer,
   },
 });

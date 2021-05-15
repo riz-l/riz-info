@@ -1,15 +1,14 @@
 // Import: Packages
 import React, { useEffect } from "react";
 import styled, { ThemeProvider } from "styled-components/macro";
-import { useSelector, useDispatch } from "react-redux";
-import { setIsGlobalThemeDark } from "./redux/slices/globalThemeSlice";
+import { useSelector } from "react-redux";
 
 // Import: Themes
 import { darkTheme } from "./app/themes/darkTheme";
 import { lightTheme } from "./app/themes/lightTheme";
 
 // Import: Components
-import { Header } from "./app/components";
+import { Header, Navigation } from "./app/components";
 
 // Component: App
 export default function App() {
@@ -17,31 +16,19 @@ export default function App() {
   const isGlobalThemeDark = useSelector(
     (state) => state.globalTheme.isGlobalThemeDark
   );
-  const dispatch = useDispatch();
 
   // Effect: Sets user preference for lightTheme/darkTheme
   useEffect(() => {
     localStorage.setItem("dark", JSON.stringify(isGlobalThemeDark));
   }, [isGlobalThemeDark]);
 
-  // Determines global theme to be lightTheme || darkTheme
-  function setTheme() {
-    if (isGlobalThemeDark) {
-      dispatch(setIsGlobalThemeDark(false));
-    } else {
-      dispatch(setIsGlobalThemeDark(true));
-    }
-  }
-
   return (
     <ThemeProvider theme={isGlobalThemeDark ? darkTheme : lightTheme}>
       <Container>
         <Header />
-        <Heading>Hello there. I'm Riz.</Heading>
+        <Navigation />
 
-        <button type="button" onClick={() => setTheme()}>
-          Change theme
-        </button>
+        <Heading>Hello there. I'm Riz.</Heading>
       </Container>
     </ThemeProvider>
   );

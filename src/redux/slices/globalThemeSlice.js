@@ -12,8 +12,9 @@ export const globalThemeSlice = createSlice({
     isGlobalThemeDark: getInitialTheme(),
   },
   reducers: {
-    setIsGlobalThemeDark: (state, { payload }) => {
-      state.isGlobalThemeDark = payload;
+    setIsGlobalThemeDark: (state) => {
+      state.isGlobalThemeDark = !state.isGlobalThemeDark;
+      localStorage.setItem("isDarkTheme", state.isGlobalThemeDark);
     },
   },
 });
