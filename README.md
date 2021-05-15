@@ -8,6 +8,8 @@ This is the repository for riz-l's portfolio website. The webite itself is built
 
 - `create-react-app`
 - `react-router-dom`
-- `reduxjs/toolkit`
+- `react-loading-skeleton`
+- `@reduxjs/toolkit`
 - `react-redux`
 - `styled-components`
+- `react-icons`

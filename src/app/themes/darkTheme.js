@@ -6,6 +6,8 @@ export const darkTheme = {
       backgroundSecondary: "#111111",
       textPrimary: "#ffffff",
       textSecondary: "#fefefe",
+      highlightPrimary: "#ff7570",
+      highlightSecondary: "#ff5851",
     },
   },
 };

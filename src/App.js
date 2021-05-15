@@ -1,12 +1,15 @@
 // Import: Packages
 import React, { useEffect } from "react";
-import styled, { ThemeProvider } from "styled-components";
+import styled, { ThemeProvider } from "styled-components/macro";
 import { useSelector, useDispatch } from "react-redux";
 import { setIsGlobalDarkTheme } from "./redux/slices/selectedThemeSlice";
 
 // Import: Themes
 import { darkTheme } from "./app/themes/darkTheme";
 import { lightTheme } from "./app/themes/lightTheme";
+
+// Import: Components
+import { Header } from "./app/components";
 
 // Component: App
 export default function App() {
@@ -33,6 +36,7 @@ export default function App() {
   return (
     <ThemeProvider theme={isGlobalDarkTheme ? darkTheme : lightTheme}>
       <Container>
+        <Header />
         <Heading>Riz Layton</Heading>
 
         <button type="button" onClick={() => setTheme()}>
@@ -57,6 +61,7 @@ const Container = styled.div`
 const Heading = styled.h1`
   color: ${(props) => props.theme.colors.global.textPrimary};
   font-family: "PoppinsThin";
-  font-size: 4rem;
+  font-size: 8rem;
+  position: relative;
   transition: all 100ms linear;
 `;

@@ -6,6 +6,8 @@ export const lightTheme = {
       backgroundSecondary: "#ffffff",
       textPrimary: "#111111",
       textSecondary: "#3d3d3d",
+      highlightPrimary: "#ff7570",
+      highlightSecondary: "#ff5851",
     },
   },
 };
