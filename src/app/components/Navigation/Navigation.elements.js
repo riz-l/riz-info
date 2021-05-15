@@ -26,7 +26,7 @@ export const Container = styled.div`
 // Element: Header
 export const Header = styled.div`
   background-color: ${(props) => props.theme.colors.global.textPrimary};
-  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.08);
+  /* box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.08); */
   height: 104px;
   max-height: 104px;
   min-height: 104px;

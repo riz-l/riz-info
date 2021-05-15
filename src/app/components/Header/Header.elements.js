@@ -6,8 +6,7 @@ const activeClassName = "nav-item-active"; // NavLink: activeClassName
 
 // Element: Container
 export const Container = styled.header`
-  background-color: ${(props) => props.theme.colors.global.backgroundSecondary};
-  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.08);
+  background-color: ${(props) => props.theme.colors.global.backgroundPrimary};
   height: 104px;
   max-height: 104px;
   min-height: 104px;
