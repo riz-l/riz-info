@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import styled, { ThemeProvider } from "styled-components/macro";
 import { useSelector, useDispatch } from "react-redux";
-import { setIsGlobalDarkTheme } from "./redux/slices/selectedThemeSlice";
+import { setIsGlobalThemeDark } from "./redux/slices/globalThemeSlice";
 
 // Import: Themes
 import { darkTheme } from "./app/themes/darkTheme";
@@ -13,28 +13,28 @@ import { Header } from "./app/components";
 
 // Component: App
 export default function App() {
-  // Redux: isGlobalDarkTheme
-  const isGlobalDarkTheme = useSelector(
-    (state) => state.selectedTheme.isGlobalDarkTheme
+  // Redux: isGlobalThemeDark
+  const isGlobalThemeDark = useSelector(
+    (state) => state.globalTheme.isGlobalThemeDark
   );
   const dispatch = useDispatch();
 
   // Effect: Sets user preference for lightTheme/darkTheme
   useEffect(() => {
-    localStorage.setItem("dark", JSON.stringify(isGlobalDarkTheme));
-  }, [isGlobalDarkTheme]);
+    localStorage.setItem("dark", JSON.stringify(isGlobalThemeDark));
+  }, [isGlobalThemeDark]);
 
   // Determines global theme to be lightTheme || darkTheme
   function setTheme() {
-    if (isGlobalDarkTheme) {
-      dispatch(setIsGlobalDarkTheme(false));
+    if (isGlobalThemeDark) {
+      dispatch(setIsGlobalThemeDark(false));
     } else {
-      dispatch(setIsGlobalDarkTheme(true));
+      dispatch(setIsGlobalThemeDark(true));
     }
   }
 
   return (
-    <ThemeProvider theme={isGlobalDarkTheme ? darkTheme : lightTheme}>
+    <ThemeProvider theme={isGlobalThemeDark ? darkTheme : lightTheme}>
       <Container>
         <Header />
         <Heading>Hello there. I'm Riz.</Heading>

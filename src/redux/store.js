@@ -2,11 +2,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 // Import: Reducers
-import selectedThemeReducer from "./slices/selectedThemeSlice";
+import globalThemeSlice from "./slices/globalThemeSlice";
 
 // Redux Store:
 export default configureStore({
   reducer: {
-    selectedTheme: selectedThemeReducer,
+    globalTheme: globalThemeSlice,
   },
 });

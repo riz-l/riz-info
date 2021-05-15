@@ -7,7 +7,7 @@ const activeClassName = "nav-item-active"; // NavLink: activeClassName
 // Element: Container
 export const Container = styled.header`
   background-color: ${(props) => props.theme.colors.global.backgroundSecondary};
-  box-shadow: 0 11px 8px -9px rgba(0, 0, 0, 0.35);
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.08);
   height: 104px;
   max-height: 104px;
   min-height: 104px;
@@ -29,7 +29,7 @@ export const Wrapper = styled.div`
 
   @media ${deviceWidth.mobileL} {
     transition: all 100ms linear;
-    width: 94%;
+    width: 92%;
   }
 `;
 
@@ -44,10 +44,15 @@ export const LogoContainer = styled.div`
 
 // Element: Logo
 export const Logo = styled.span`
+  align-items: center;
   color: ${(props) => props.theme.colors.global.textPrimary};
   cursor: pointer;
+  display: flex;
   font-family: "PoppinsBold", sans-serif;
   font-size: 3rem;
+  height: 100%;
+  justify-content: center;
+  padding: 0.6rem 1rem;
   text-transform: lowercase;
   transition: all 100ms linear;
 
