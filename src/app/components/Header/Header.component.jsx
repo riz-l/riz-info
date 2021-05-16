@@ -46,11 +46,17 @@ export default function Header() {
 
           <NavContainer>
             <Nav>
-              <NavItem to="/g">Home</NavItem>
-              <NavItem to="/g">Projects</NavItem>
-              <NavItem to="/g">Blog</NavItem>
-              <NavItem to="/g">About</NavItem>
-              <NavItem to="/g">Contact</NavItem>
+              <NavItem to="/" exact>
+                Home
+              </NavItem>
+
+              <NavItem to="/projects">Projects</NavItem>
+
+              <NavItem to="/blog">Blog</NavItem>
+
+              <NavItem to="/about">About</NavItem>
+
+              <NavItem to="/contact">Contact</NavItem>
             </Nav>
 
             <MenuIconContainer onClick={() => dispatch(setIsNavigationOpen())}>

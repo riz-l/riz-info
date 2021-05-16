@@ -20,6 +20,11 @@ export const Wrapper = styled.div`
   justify-content: center;
   margin: 0 auto;
   width: 92%;
+
+  @media ${deviceWidth.tablet} {
+    align-items: flex-start;
+    transition: all 100ms linear;
+  }
 `;
 
 // Element: Heading
@@ -32,8 +37,7 @@ export const Heading = styled.h1`
 
   @media ${deviceWidth.laptop} {
     font-size: 6rem;
-    margin-bottom: 2rem;
-    margin-top: -10rem;
+    margin-bottom: 4rem;
     transition: all 100ms linear;
   }
 
@@ -64,6 +68,16 @@ export const Cta = styled.div`
   margin-top: 1rem;
   padding: 1.4rem 2.4rem;
   transition: all 100ms linear;
+
+  @media ${deviceWidth.laptop} {
+    margin-top: 0;
+    transition: all 100ms linear;
+  }
+
+  @media ${deviceWidth.tablet} {
+    margin-left: 1rem;
+    transition: all 100ms linear;
+  }
 
   &:hover {
     background-color: ${(props) => props.theme.colors.global.textPrimary};

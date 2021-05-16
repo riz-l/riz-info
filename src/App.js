@@ -2,6 +2,7 @@
 import React, { useEffect } from "react";
 import styled, { ThemeProvider } from "styled-components/macro";
 import { useSelector } from "react-redux";
+import { Switch, Route } from "react-router-dom";
 
 // Import: Themes
 import { darkTheme } from "./app/themes/darkTheme";
@@ -29,7 +30,9 @@ export default function App() {
         <Header />
         <Navigation />
 
-        <Home />
+        <Switch>
+          <Route component={Home} path="/" exact />
+        </Switch>
       </Container>
     </ThemeProvider>
   );
