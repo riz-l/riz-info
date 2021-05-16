@@ -1,6 +1,6 @@
 // Import: Packages
 import styled from "styled-components/macro";
-import { deviceWidth } from "../../../definitions/breakPoints";
+import { deviceMaxWidth } from "../../../definitions/breakPoints";
 
 // Element: Container
 export const Container = styled.main`
@@ -20,8 +20,9 @@ export const Wrapper = styled.div`
   justify-content: center;
   margin: 0 auto;
   width: 92%;
+  max-width: 1400px;
 
-  @media ${deviceWidth.tablet} {
+  @media ${deviceMaxWidth.tablet} {
     align-items: flex-start;
     transition: all 100ms linear;
   }
@@ -35,13 +36,13 @@ export const Heading = styled.h1`
   padding: 0.6rem 1rem;
   transition: all 100ms linear;
 
-  @media ${deviceWidth.laptop} {
+  @media ${deviceMaxWidth.laptop} {
     font-size: 6rem;
     margin-bottom: 4rem;
     transition: all 100ms linear;
   }
 
-  @media ${deviceWidth.tablet} {
+  @media ${deviceMaxWidth.tablet} {
     font-size: 4rem;
     transition: all 100ms linear;
   }
@@ -53,7 +54,7 @@ export const CtaText = styled.span`
   font-size: 2rem;
   transition: all 100ms linear;
 
-  @media ${deviceWidth.laptop} {
+  @media ${deviceMaxWidth.laptop} {
     font-size: 1.8rem;
     transition: all 100ms linear;
   }
@@ -69,12 +70,12 @@ export const Cta = styled.div`
   padding: 1.4rem 2.4rem;
   transition: all 100ms linear;
 
-  @media ${deviceWidth.laptop} {
+  @media ${deviceMaxWidth.laptop} {
     margin-top: 0;
     transition: all 100ms linear;
   }
 
-  @media ${deviceWidth.tablet} {
+  @media ${deviceMaxWidth.tablet} {
     margin-left: 1rem;
     transition: all 100ms linear;
   }

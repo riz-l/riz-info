@@ -10,8 +10,8 @@ const width = {
   desktop: "2560px",
 };
 
-// breakpoints: deviceWidth
-export const deviceWidth = {
+// breakpoints: deviceMaxWidth
+export const deviceMaxWidth = {
   mobileS: `(max-width: ${width.mobileS})`,
   mobileM: `(max-width: ${width.mobileM})`,
   mobileL: `(max-width: ${width.mobileL})`,
@@ -20,4 +20,16 @@ export const deviceWidth = {
   laptop: `(max-width: ${width.laptop})`,
   laptopL: `(max-width: ${width.laptopL})`,
   desktop: `(max-width: ${width.desktop})`,
+};
+
+// breakpoints: deviceMinWidth
+export const deviceMinWidth = {
+  mobileS: `(min-width: ${width.mobileS})`,
+  mobileM: `(min-width: ${width.mobileM})`,
+  mobileL: `(min-width: ${width.mobileL})`,
+  tablet: `(min-width: ${width.tablet})`,
+  tabletL: `(min-width: ${width.tabletL})`,
+  laptop: `(min-width: ${width.laptop})`,
+  laptopL: `(min-width: ${width.laptopL})`,
+  desktop: `(min-width: ${width.desktop})`,
 };

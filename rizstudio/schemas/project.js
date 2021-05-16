@@ -1,6 +1,6 @@
 export default {
-  name: "post",
-  title: "Post",
+  name: "project",
+  title: "Project",
   type: "document",
   fields: [
     {
@@ -18,10 +18,9 @@ export default {
       },
     },
     {
-      name: "author",
-      title: "Author",
-      type: "reference",
-      to: { type: "author" },
+      name: "date",
+      title: "Date",
+      type: "datetime",
     },
     {
       name: "mainImage",
@@ -30,6 +29,33 @@ export default {
       options: {
         hotspot: true,
       },
+    },
+    {
+      name: "client",
+      title: "Client",
+      type: "string",
+    },
+    {
+      name: "description",
+      title: "Description",
+      type: "text",
+    },
+    {
+      name: "projectType",
+      title: "Project Type",
+      type: "string",
+      options: {
+        list: [
+          { value: "client", title: "Client" },
+          { value: "other", title: "Other" },
+          { value: "personal", title: "Personal" },
+        ],
+      },
+    },
+    {
+      name: "link",
+      title: "Link",
+      type: "url",
     },
     {
       name: "tags",
@@ -41,11 +67,6 @@ export default {
       },
     },
     {
-      name: "publishedAt",
-      title: "Published at",
-      type: "datetime",
-    },
-    {
       name: "body",
       title: "Body",
       type: "blockContent",
@@ -55,14 +76,7 @@ export default {
   preview: {
     select: {
       title: "title",
-      author: "author.name",
       media: "mainImage",
-    },
-    prepare(selection) {
-      const { author } = selection;
-      return Object.assign({}, selection, {
-        subtitle: author && `by ${author}`,
-      });
     },
   },
 };

@@ -1,6 +1,6 @@
 // Import: Packages
 import styled from "styled-components/macro";
-import { deviceWidth } from "../../../definitions/breakPoints";
+import { deviceMaxWidth } from "../../../definitions/breakPoints";
 import { NavLink } from "react-router-dom";
 const activeClassName = "nav-item-active"; // NavLink: activeClassName
 
@@ -25,6 +25,7 @@ export const Wrapper = styled.div`
   margin: 0 auto;
   transition: all 100ms linear;
   width: 92%;
+  max-width: 1400px;
 `;
 
 // Element: LogoContainer
@@ -73,7 +74,7 @@ export const Nav = styled.nav`
   justify-content: flex-end;
   width: 100%;
 
-  @media ${deviceWidth.tabletL} {
+  @media ${deviceMaxWidth.tabletL} {
     display: none;
     opacity: 0;
     visibility: hidden;
@@ -126,7 +127,7 @@ export const MenuIconContainer = styled.div`
   transition: all 100ms linear;
   visibility: hidden;
 
-  @media ${deviceWidth.tabletL} {
+  @media ${deviceMaxWidth.tabletL} {
     display: flex;
     opacity: 1;
     transition: all 100ms linear;

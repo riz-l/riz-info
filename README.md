@@ -6,6 +6,8 @@ This is the repository for riz-l's portfolio website. The webite itself is built
 
 ## Installed Packages
 
+Frontend
+
 - `create-react-app`
 - `react-router-dom`
 - `react-loading-skeleton`
@@ -13,3 +15,10 @@ This is the repository for riz-l's portfolio website. The webite itself is built
 - `react-redux`
 - `styled-components`
 - `react-icons`
+- `@sanity/block-content-to-react`
+- `@sanity/client`
+- `@sanity/image-url`
+
+Backend
+
+- `sanity`
