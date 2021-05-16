@@ -73,7 +73,7 @@ export const Nav = styled.nav`
   justify-content: flex-end;
   width: 100%;
 
-  @media ${deviceWidth.tablet} {
+  @media ${deviceWidth.tabletL} {
     display: none;
     opacity: 0;
     visibility: hidden;
@@ -126,7 +126,7 @@ export const MenuIconContainer = styled.div`
   transition: all 100ms linear;
   visibility: hidden;
 
-  @media ${deviceWidth.tablet} {
+  @media ${deviceWidth.tabletL} {
     display: flex;
     opacity: 1;
     transition: all 100ms linear;

@@ -7,8 +7,9 @@ import { useSelector } from "react-redux";
 import { darkTheme } from "./app/themes/darkTheme";
 import { lightTheme } from "./app/themes/lightTheme";
 
-// Import: Components
+// Import: Components, Pages
 import { Header, Navigation } from "./app/components";
+import { Home } from "./app/pages";
 
 // Component: App
 export default function App() {
@@ -27,6 +28,8 @@ export default function App() {
       <Container>
         <Header />
         <Navigation />
+
+        <Home />
       </Container>
     </ThemeProvider>
   );

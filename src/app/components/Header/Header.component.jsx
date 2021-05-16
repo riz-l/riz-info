@@ -41,7 +41,7 @@ export default function Header() {
           <ThemeToggle
             isOn={isGlobalThemeDark}
             handleToggle={() => dispatch(setIsGlobalThemeDark())}
-            onColor="#06d6a0"
+            onColor="#f5f4f4"
           />
 
           <NavContainer>

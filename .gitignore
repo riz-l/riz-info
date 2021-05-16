@@ -13,6 +13,7 @@ node_modules
 /build
 
 # misc
+/src/assets/pdfs
 .DS_Store
 .env
 .env.local

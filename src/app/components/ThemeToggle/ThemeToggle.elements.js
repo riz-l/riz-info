@@ -25,6 +25,10 @@ export const Label = styled.label`
 
   & ${Button} {
     background: #fff;
+    background: ${({ isGlobalThemeDark, props }) =>
+      isGlobalThemeDark
+        ? (props) => props.theme.colors.global.highlightSecondary
+        : "#f5f4f4"};
     border-radius: 45px;
     box-shadow: 0 0 2px 0 rgba(10, 10, 10, 0.29);
     content: "";

@@ -1,2 +1,2 @@
-// Export: Thing
-// export { default as Thing } from "./Thing/Thing.component";
+// Export: Home
+export { default as Home } from "./Home/Home.component";
