@@ -42,17 +42,31 @@ export default function Navigation() {
         </Header>
 
         <NavContainer>
-          <NavItem to="/" exact>
+          <NavItem to="/" exact onClick={() => dispatch(setIsNavigationOpen())}>
             Home
           </NavItem>
 
-          <NavItem to="/projects">Projects</NavItem>
+          <NavItem
+            to="/projects"
+            onClick={() => dispatch(setIsNavigationOpen())}
+          >
+            Projects
+          </NavItem>
 
-          <NavItem to="/blog">Blog</NavItem>
+          <NavItem to="/blog" onClick={() => dispatch(setIsNavigationOpen())}>
+            Blog
+          </NavItem>
 
-          <NavItem to="/about">About</NavItem>
+          <NavItem to="/about" onClick={() => dispatch(setIsNavigationOpen())}>
+            About
+          </NavItem>
 
-          <NavItem to="/contact">Contact</NavItem>
+          <NavItem
+            to="/contact"
+            onClick={() => dispatch(setIsNavigationOpen())}
+          >
+            Contact
+          </NavItem>
         </NavContainer>
       </Container>
     </>

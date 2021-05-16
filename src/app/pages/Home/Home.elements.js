@@ -38,12 +38,12 @@ export const Heading = styled.h1`
 
   @media ${deviceMaxWidth.laptop} {
     font-size: 6rem;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     transition: all 100ms linear;
   }
 
   @media ${deviceMaxWidth.tablet} {
-    font-size: 4rem;
+    font-size: 5rem;
     transition: all 100ms linear;
   }
 `;
