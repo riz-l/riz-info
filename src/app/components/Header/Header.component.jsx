@@ -35,7 +35,7 @@ export default function Header() {
       <Container>
         <Wrapper>
           <LogoContainer>
-            <Logo>Riz</Logo>
+            <Logo to="/">Riz</Logo>
           </LogoContainer>
 
           <ThemeToggle

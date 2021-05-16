@@ -10,7 +10,7 @@ import { lightTheme } from "./app/themes/lightTheme";
 
 // Import: Components, Pages
 import { Header, Navigation } from "./app/components";
-import { Home } from "./app/pages";
+import { Home, Projects } from "./app/pages";
 
 // Component: App
 export default function App() {
@@ -32,6 +32,7 @@ export default function App() {
 
         <Switch>
           <Route component={Home} path="/" exact />
+          <Route component={Projects} path="/projects" />
         </Switch>
       </Container>
     </ThemeProvider>

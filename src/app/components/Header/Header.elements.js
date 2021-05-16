@@ -10,6 +10,9 @@ export const Container = styled.header`
   height: 104px;
   max-height: 104px;
   min-height: 104px;
+  position: sticky;
+  -webkit-position: sticky;
+  top: 0;
   transition: all 100ms linear;
   width: 100vw;
   max-width: 100vw;
@@ -38,7 +41,7 @@ export const LogoContainer = styled.div`
 `;
 
 // Element: Logo
-export const Logo = styled.span`
+export const Logo = styled(NavLink)`
   align-items: center;
   color: ${(props) => props.theme.colors.global.textPrimary};
   cursor: pointer;
