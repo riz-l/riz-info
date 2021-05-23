@@ -10,9 +10,6 @@ export const Container = styled.header`
   height: 104px;
   max-height: 104px;
   min-height: 104px;
-  position: sticky;
-  -webkit-position: sticky;
-  top: 0;
   transition: all 100ms linear;
   width: 100%;
   z-index: 3;

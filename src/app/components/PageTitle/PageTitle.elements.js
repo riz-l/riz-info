@@ -18,6 +18,7 @@ export const Heading = styled.h1`
   color: ${(props) => props.theme.colors.global.textPrimary};
   font-family: "PoppinsSemiBold", sans-serif;
   font-size: 3.4rem;
+  text-align: center;
   transition: all 100ms linear;
 `;
 
@@ -26,5 +27,6 @@ export const Subheading = styled.span`
   color: ${(props) => props.theme.colors.global.textPrimary};
   font-family: "PoppinsRegular", sans-serif;
   font-size: 1.6rem;
+  text-align: center;
   transition: all 100ms linear;
 `;

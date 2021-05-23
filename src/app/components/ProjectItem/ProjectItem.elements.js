@@ -8,6 +8,16 @@ const blinkOpacity = keyframes`
   }
 `;
 
+// Animation: fade
+const fade = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
+
 // Element: Blink
 export const Blink = styled.span`
   animation: ${blinkOpacity} 1s linear infinite;
@@ -19,6 +29,7 @@ export const Blink = styled.span`
 // Element: Container
 export const Container = styled.article`
   align-items: center;
+  animation: ${fade} 0.5s ease-out;
   border-radius: 8px;
   display: flex;
   height: 360px;
@@ -36,6 +47,7 @@ export const Container = styled.article`
 // Element: Background
 export const Background = styled.div`
   align-items: center;
+  animation: ${fade} 0.5s ease-out;
   background: url(${({ imageSrc }) => imageSrc && imageSrc});
   background-attachment: fixed;
   background-color: #19181f;
@@ -91,6 +103,7 @@ export const Details = styled.div`
 
 // Element: Image
 export const Image = styled.img`
+  animation: ${fade} 1s ease-out;
   border-bottom-left-radius: 8px;
   border-top-left-radius: 8px;
   flex: 450px;

@@ -5,10 +5,22 @@ import styled, { keyframes } from "styled-components/macro";
 const blinkOpacity = keyframes`
   50% {
     opacity: 0;
-  }`;
+  }
+`;
+
+// Animation: fade
+const fade = keyframes`
+0% {
+  opacity: 0;
+}
+100% {
+  opacity: 1;
+}
+`;
 
 // Element: Container
 export const Container = styled.main`
+  animation: ${fade} 0.5s ease-out;
   height: auto;
   min-height: calc(100vh - 200px);
   width: 100%;
@@ -17,6 +29,7 @@ export const Container = styled.main`
 // Element: Wrapper
 export const Wrapper = styled.div`
   align-items: center;
+  animation: ${fade} 0.5s ease-out;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -112,6 +125,7 @@ export const Header = styled.header`
 
 // Element: HeaderImage
 export const HeaderImage = styled.img`
+  animation: ${fade} 1s ease-out;
   background-position: center;
   border-radius: 8px;
   max-height: 100%;
