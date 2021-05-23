@@ -1,5 +1,6 @@
 // Import: Packages
 import React from "react";
+import moment from "moment";
 import { Link } from "react-router-dom";
 
 // Import: Utils
@@ -64,7 +65,7 @@ export default function ProjectItem({
 
                   <Tag>
                     <span>Date:</span>
-                    {date ? date : "N/A"}
+                    {date ? moment(date).format("MMMM Do YYYY") : "N/A"}
                   </Tag>
 
                   <Tag>

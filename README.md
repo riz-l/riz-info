@@ -9,12 +9,13 @@ This is the repository for riz-l's portfolio website. The webite itself is built
 Frontend
 
 - `create-react-app`
+- `moment`
 - `react-router-dom`
 - `react-loading-skeleton`
-- `@reduxjs/toolkit`
 - `react-redux`
 - `styled-components`
 - `react-icons`
+- `@reduxjs/toolkit`
 - `@sanity/block-content-to-react`
 - `@sanity/client`
 - `@sanity/image-url`
