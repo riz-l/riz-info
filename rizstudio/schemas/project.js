@@ -31,6 +31,11 @@ export default {
       },
     },
     {
+      name: "mainImageAlt",
+      title: "Main Image Alt Text",
+      type: "string",
+    },
+    {
       name: "client",
       title: "Client",
       type: "string",

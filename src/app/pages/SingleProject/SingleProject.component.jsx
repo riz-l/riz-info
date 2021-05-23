@@ -1,9 +1,11 @@
 // Import: Packages
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
-import sanityClient from "../../../client";
-import imageUrlBuilder from "@sanity/image-url";
+import { getSingleProject } from "../../../redux/slices/sanitySingleProjectSlice";
 import BlockContent from "@sanity/block-content-to-react";
+
+import { sanityImageUrl } from "../../../utils/sanityImageUrl";
 
 // Import: Icons
 import { IoIosArrowBack as BackIcon } from "react-icons/io";
@@ -21,47 +23,22 @@ import {
   Wrapper,
 } from "./SingleProject.elements";
 
-// Extracts imageUrl from sanity post data source
-const builder = imageUrlBuilder(sanityClient);
-function urlFor(source) {
-  return builder.image(source);
-}
-
 // Page: SingleProject
 export default function SingleProject() {
-  // State: singlePost
-  const [singlePost, setSinglePost] = useState([]);
+  // Redux: Extracts from the global state
+  const singlePost = useSelector((state) => state.sanitySingleProject.project);
+  const dispatch = useDispatch();
 
   // Params: slug
   const { slug } = useParams();
 
-  // Effect: Fetches post data === slug.current from Sanity.io
+  // Effect: Fetches singlePost from Sanity.io
   useEffect(() => {
-    sanityClient
-      .fetch(
-        `*[slug.current == "${slug}"]{
-            title,
-            _id,
-            slug,
-            client,
-            projectType,
-            link,
-            tags,
-            mainImage{
-              asset->{
-                _id,
-                url
-              }
-            },
-            body,
-          }`
-      )
-      .then((data) => setSinglePost(data[0]))
-      .catch(console.error);
-  }, [slug]);
+    dispatch(getSingleProject(slug));
+  }, [dispatch, slug]);
 
   // If there is no singlePost, return loading message
-  if (!singlePost) {
+  if (!singlePost || singlePost.length < 0) {
     return (
       <>
         <div>
@@ -87,15 +64,20 @@ export default function SingleProject() {
 
             <Header>
               <Heading>{singlePost.title}</Heading>
-              <HeaderImage src={urlFor(singlePost.mainImage).url()} alt="" />
+              <HeaderImage
+                src={sanityImageUrl(singlePost.mainImage).url()}
+                alt={singlePost.mainImageAlt}
+              />
             </Header>
 
             <Prose>
-              <BlockContent
-                blocks={singlePost.body}
-                projectId="cqtmy0ey"
-                dataset="production"
-              />
+              {singlePost.body !== undefined ? (
+                <BlockContent
+                  blocks={singlePost.body}
+                  projectId="cqtmy0ey"
+                  dataset="production"
+                />
+              ) : null}
             </Prose>
           </Content>
         </Wrapper>

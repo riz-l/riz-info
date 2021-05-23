@@ -32,8 +32,8 @@ export const Heading = styled.h1`
   background-color: ${(props) => props.theme.colors.global.backgroundSecondary};
   border-radius: 8px;
   color: ${(props) => props.theme.colors.global.textPrimary};
+  font-family: "PoppinsBold", sans-serif;
   font-size: 4rem;
-  font-weight: 600;
   padding: 1rem 2rem;
   position: absolute;
   z-index: 2;
@@ -88,8 +88,8 @@ export const ReturnButton = styled.div`
     align-items: center;
     color: ${(props) => props.theme.colors.global.textPrimary};
     display: flex;
+    font-family: "PoppinsBold", sans-serif;
     font-size: 1.8rem;
-    font-weight: 600;
     transition: all 100ms linear;
 
     & svg {
@@ -204,8 +204,8 @@ export const Prose = styled.div`
       ${(props) => props.theme.colors.global.highlightPrimary};
     border-top-left-radius: 4px;
     color: ${(props) => props.theme.colors.global.textPrimamry};
+    font-family: "PoppinsMedium", sans-serif;
     font-size: 1.2rem;
-    font-weight: 500;
     margin-bottom: 1.6em;
     margin-top: 1.6em;
     padding-left: 1em;
