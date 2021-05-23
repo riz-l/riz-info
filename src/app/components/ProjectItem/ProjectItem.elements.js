@@ -142,6 +142,7 @@ export const Tags = styled.div`
   display: flex;
   height: 100%;
   justify-content: flex-start;
+  transition: all 100ms linear;
   width: 100%;
   margin-top: auto;
 `;
@@ -156,6 +157,7 @@ export const Tag = styled.span`
   justify-content: center;
   margin-right: 0.8rem;
   padding: 0.4rem 0.8rem;
+  transition: all 100ms linear;
 
   &:last-of-type {
     margin-right: 0;
