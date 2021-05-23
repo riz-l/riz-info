@@ -1,7 +1,8 @@
 // Import: Packages
-import React from "react";
-// import { useSelector } from "react-redux";
-// import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import React, { useEffect, useState } from "react";
+import sanityClient from "../../../client";
+import { useSelector } from "react-redux";
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
 // Import: Elements
 import { Container, ProjectItems, Wrapper } from "./Projects.elements";
@@ -11,9 +12,51 @@ import { PageTitle, ProjectItem } from "../../components";
 
 // Page: Projects
 export default function Projects() {
-  // const isGlobalThemeDark = useSelector(
-  //   (state) => state.globalTheme.isGlobalThemeDark
-  // );
+  // State: isLoading, projectData
+  const [isLoading, setIsLoading] = useState(false);
+  const [projectData, setProjectData] = useState([]);
+
+  // Redux: Extracts from the global state
+  const isGlobalThemeDark = useSelector(
+    (state) => state.globalTheme.isGlobalThemeDark
+  );
+
+  // Effect: Fetches projectData from Sanity.io
+  useEffect(() => {
+    async function getSanityData() {
+      setIsLoading(true);
+      sanityClient
+        .fetch(
+          `*[_type == "project"]{
+            title,
+            slug,
+            date,
+            mainImage{
+              asset->{
+                _id,
+                url
+              },
+              alt
+            },
+            client,
+            description,
+            projectType,
+            link,
+            tags
+          }`
+        )
+        .then((data) => {
+          setProjectData(data);
+          setIsLoading(false);
+        })
+        .catch((error) => {
+          setIsLoading(false);
+          console.log(error);
+          throw new Error(error);
+        });
+    }
+    getSanityData();
+  }, []);
 
   return (
     <>
@@ -21,25 +64,39 @@ export default function Projects() {
         <Wrapper>
           <PageTitle heading="Projects" subheading="Welcome to my Projects" />
 
-          {/* <SkeletonTheme
-            color={isGlobalThemeDark ? "#f2f2f2" : "#444448"}
-            highlightColor={isGlobalThemeDark ? "#ffffff" : "#505058"}
-          >
-            <Skeleton height={280} count={1} />
-          </SkeletonTheme> */}
-
-          <ProjectItems>
-            <ProjectItem
-              client="NHS"
-              date="2021/05/16"
-              description="Wow look"
-              imageAlt="Big image"
-              imageSrc="https://images.unsplash.com/photo-1554734867-bf3c00a49371?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
-              slug="one-ed"
-              title="OneED"
-              type="Test"
-            />
-          </ProjectItems>
+          {isLoading ? (
+            <SkeletonTheme
+              color={isGlobalThemeDark ? "#505058" : "#ffffff"}
+              highlightColor={isGlobalThemeDark ? "#444448" : "#f2f2f2"}
+            >
+              <Skeleton
+                height={320}
+                count={1}
+                style={{ borderRadius: "8px", marginBottom: "2rem" }}
+              />
+            </SkeletonTheme>
+          ) : (
+            projectData &&
+            projectData.length > 0 && (
+              <ProjectItems>
+                {projectData.map((project, index) => (
+                  <React.Fragment key={project.slug.current}>
+                    <ProjectItem
+                      key={index}
+                      client={project.client}
+                      date={project.date}
+                      description={project.description}
+                      imageAlt={project.mainImage.alt}
+                      imageSrc={project.mainImage.asset.url}
+                      slug={project.slug.current}
+                      title={project.title}
+                      type={project.projectType}
+                    />
+                  </React.Fragment>
+                ))}
+              </ProjectItems>
+            )
+          )}
         </Wrapper>
       </Container>
     </>

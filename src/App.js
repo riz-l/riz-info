@@ -10,7 +10,14 @@ import { lightTheme } from "./app/themes/lightTheme";
 
 // Import: Components, Pages
 import { Header, Navigation } from "./app/components";
-import { Home, Projects } from "./app/pages";
+import {
+  About,
+  Blog,
+  Contact,
+  Home,
+  Projects,
+  SingleProject,
+} from "./app/pages";
 
 // Component: App
 export default function App() {
@@ -32,7 +39,11 @@ export default function App() {
 
         <Switch>
           <Route component={Home} path="/" exact />
+          <Route component={SingleProject} path="/projects/:slug" />
           <Route component={Projects} path="/projects" />
+          <Route component={Blog} path="/blog" />
+          <Route component={About} path="/about" />
+          <Route component={Contact} path="/contact" />
         </Switch>
       </Container>
     </ThemeProvider>
@@ -45,6 +56,4 @@ const Container = styled.div`
   height: 100%;
   min-height: 100vh;
   transition: all 100ms linear;
-  width: 100%;
-  min-width: 100vw;
 `;

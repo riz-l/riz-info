@@ -14,9 +14,8 @@ export const Container = styled.header`
   -webkit-position: sticky;
   top: 0;
   transition: all 100ms linear;
-  width: 100vw;
-  max-width: 100vw;
-  min-width: 100vw;
+  width: 100%;
+  z-index: 3;
 `;
 
 // Element: Wrapper
@@ -50,7 +49,7 @@ export const Logo = styled(NavLink)`
   font-size: 3rem;
   height: 100%;
   justify-content: center;
-  padding: 0.6rem 1rem;
+  padding: 0.6rem 1rem 0.6rem 0;
   text-transform: lowercase;
   transition: all 100ms linear;
 

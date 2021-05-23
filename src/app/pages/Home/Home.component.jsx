@@ -2,7 +2,7 @@
 import React from "react";
 
 // Import: Assets
-import cvPdf from "../../../assets/pdfs/cv-2021-jlayton.pdf";
+import cv from "../../../assets/pdfs/cv.pdf";
 
 // Import: Elements
 import { Container, Cta, CtaText, Heading, Wrapper } from "./Home.elements";
@@ -16,7 +16,7 @@ export default function Home() {
           <Heading>Hi there. I'm Riz.</Heading>
 
           <Cta>
-            <a href={cvPdf} target="blank">
+            <a href={cv} target="blank">
               <CtaText>Download CV</CtaText>
             </a>
           </Cta>

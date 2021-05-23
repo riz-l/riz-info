@@ -2,17 +2,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+// Import: Utils
+import { capitalizeFirstLetter } from "../../../utils/capitalize";
+
 // Import: Elements
 import {
+  Background,
+  Blink,
   Container,
-  Description,
+  Content,
+  Details,
+  DetailsContainer,
   Image,
-  ImageContainer,
-  InformationContainer,
-  ProjectHeading,
-  ProjectLead,
-  Row,
-  RowItem,
+  Tag,
+  Tags,
+  Title,
 } from "./ProjectItem.elements";
 
 // Component: ProjectItem
@@ -29,36 +33,49 @@ export default function ProjectItem({
   return (
     <>
       <Container>
-        <ImageContainer>
-          <Image src={imageSrc} alt={imageAlt} />
-        </ImageContainer>
+        <Background imageSrc={imageSrc && imageSrc} />
 
-        <InformationContainer>
-          <ProjectLead>
-            <Link to={"/projects/" + slug}>
-              <ProjectHeading>{title}</ProjectHeading>
-            </Link>
-          </ProjectLead>
+        <DetailsContainer>
+          <Details>
+            <Image alt={imageAlt && imageAlt} src={imageSrc && imageSrc} />
 
-          <Description>
-            <p>{description}</p>
-          </Description>
+            <Content>
+              <Link to={"/projects/" + slug}>
+                <Title>
+                  <h2>
+                    {title && title}
+                    <Blink>_</Blink>
+                  </h2>
+                </Title>
 
-          <Row>
-            <RowItem>
-              <strong>Finished on:</strong>{" "}
-              {new Date(date).toLocaleDateString()}
-            </RowItem>
+                <p>
+                  {description && description.length > 120
+                    ? description.substring(0, 120) + "..."
+                    : description && description.length < 120
+                    ? description
+                    : "Sorry! It doesn't look like a description has been specified yet."}
+                </p>
 
-            <RowItem>
-              <strong>Client:</strong> {client}
-            </RowItem>
+                <Tags>
+                  <Tag>
+                    <span>Client:</span>
+                    {client ? client : "N/A"}
+                  </Tag>
 
-            <RowItem style={{ textTransform: "capitalize" }}>
-              <strong>Type:</strong> {type}
-            </RowItem>
-          </Row>
-        </InformationContainer>
+                  <Tag>
+                    <span>Date:</span>
+                    {date ? date : "N/A"}
+                  </Tag>
+
+                  <Tag>
+                    <span>Type:</span>
+                    {type ? capitalizeFirstLetter(type) : "N/A"}
+                  </Tag>
+                </Tags>
+              </Link>
+            </Content>
+          </Details>
+        </DetailsContainer>
       </Container>
     </>
   );
